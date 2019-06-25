@@ -1,0 +1,26 @@
+<!-- <!DOCTYPE html>가 현재 문서가 HTML 5 형식의 문서임을 표시 -->
+<!-- <html lang="en">의  lang은 표준 언어를 표시한다. en = 영어, ko = 한글 -->
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <!-- head는 현재 문서에 대한 메타정보를 적는 엘리먼트 meta1은 영어권에선 필요X meta2,3은 굳이 사용하지 않아도 됨 -->
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>HTML INTRO</title>
+        </head>
+        <body>
+            <a href="https://www.google.co.kr">구글로 이동</a><br>
+            <a href="http://127.0.0.1:5500/exhtml03.html">exhtml03.html로 이동</a><br>
+            <a href="/exhtml03.html">exhtml03.html로 이동</a><br>
+            <a href="./exhtml03.html">exhtml03.html로 이동</a><br>
+            <a href="exhtml03.html">exhtml03.html로 이동</a><br>
+            <p>a 엘리먼트의 target 속성으로 원하는 창에서 이동 가능</p>
+            <a href="exhtml03.html" target="_blank">exhtml03.html로 이동(새창)</a><br> <!-- 계속해서 새 창 생성 -->
+            <a href="exhtml03.html" target="mywin">exhtml03.html로 이동(새창)</a><br> <!-- 이름으로 주면 창이 없을 때만 새로 열림 -->
+            <a href="exhtml03.html" target="sub">exhtml03.html로 이동(iframe)</a><br>
+
+            <iframe src="exhtml01.html" name="sub" width="200" height="200" frameborder="1"></iframe>
+            
+        </body>
+        </html>
