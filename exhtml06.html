@@ -1,0 +1,36 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>HTML FORM</title>
+        </head>
+        <body>
+            <form action="https://www.google.co.kr/search" target="_blank">
+                구글검색 : <input type="text" name="q" />  
+                <select name="lr">
+                   <option value="lang_ko">한국어</option>
+                   <option value="lang_en">영어</option>
+                   <option value="lang_ja">일본어</option>
+                </select>  
+            <input type="submit" value="검색" /> <br>
+            </form> 
+            위 input에 검색어를 입력하고 sumbit 버튼을 클릭하면 구글 검색 결과 출력
+            1. submit 버튼에 표시되는 글자를 "검색"으로 변경
+            2. 검색 버튼을 클릭하면,
+            - https://www.google.co.kr/search?q=입력한검색어
+            와 같은 주소로 이동을 하여, 구글 검색 결과 페이지가 출력되도록
+            3. 검색결과가 새 창으로 출력되도록 변경
+            4. 구글 검색 결과가 iframe에 나오도록 변경
+            5. lr=lang_ko 파라미터를 추가하면 한국어 검색 결과만 나온다
+                영어, 한국어, 일본어 중에 하나를 선택하여 검색할 수 있도록 셀렉트
+ 
+            <br>
+            <!-- <form action="https://search.naver.com/search.naver?&query=?" target="_blank">
+                네이버검색 : <input type="text" name="query" /> <input type="submit" value="전송"/> <br>    
+            <iframe src="https://search.naver.com/search.naver?&query=?" name="result" width="600" height="200" frameborder="1"></iframe>
+
+            </form>  -->
+        </body>
+        </html>
