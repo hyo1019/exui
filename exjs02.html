@@ -5,9 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS BRANCH and LOOP</title>
+</head>
+<body>
+    <h1>문제 1</h1>
+    점수 : <input type="text" id="score" /> <Button id="btn1">평가</Button> 결과 : <span id="result"> </span>
+    
+    <h1>문제 2</h1>
+    <select id="month">
+        <!-- 옵션을 12개 만드는 기능 option[value=$]{$}*12 을 적고 Tab키를 누른다 -->
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>   
+    </select> 월
+    <Button id="btn2">계절</Button> 계절확인 : <span id="season"></span>
+
     <script>
         // 1.점수를 입력받아서 60-100 이면 통과, 0~59면 실패, 나머지는 유효하지 않은 점수라고 출력
-
+        var sco = document.querySelector('#score');
+        var bt1 = document.querySelector('#btn1');
+        var res = document.querySelector('#result');
+        bt1.onclick = function( ){
+            console.log(sco.value);
+            if(60 <= Number(sco.value)) res = "통과"; //res.value="통과"
+            else if(60 > Number(sco.value)) res.value="실패";
+            else res = "유효하지 않은 점수"
+            res = re;
+        };
         // 2.월을 입력받아서 계절을 출력 (3-5 봄, 6-8여름, 9-11가을, 나머지 겨울)
 
         // 3.정수를 입력받아서 1부터 그 숫자까지의 합을 출력
@@ -19,9 +51,12 @@
         //  숫자가 아닌 문자열 입력시 : 덧셈을 하지 않고 "숫자가 아닌 것을 입력했다"는 메시지를 출력
         
         // 6.구구단을 테이블 형태로 출력
+
+        console.log('=== 비교 결과' );
+        console.log( 0 === false );
+        console.log( 0 === "" );
+        console.log( 123 === "123" );
+        console.log( null === undefined );
     </script>
-</head>
-<body>
-    
 </body>
 </html>

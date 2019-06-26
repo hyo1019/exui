@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POST LIST</title>
+    <style>
+        .container {
+            width: 1080px;
+            margin: 0 auto 0 auto;
+        }
+        table {
+        width: 100%;
+        border: 1px solid #444444;
+        border-collapse: collapse;
+        }
+        th, td {
+        border: 1px solid #444444;
+        padding: 10px;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        https://www.codingfactory.net/10495 <br>
+        <select name="searchlist">
+            <option value="all" selected>전체</option>
+            <option value="witer" >작성자</option>
+            <option value="headline">제목</option>
+        </select>
+        <input type="text" id="searchtext" />
+        <input type="submit" id="search" value="검색" />
+        <table>
+                <thead>
+                  <tr>
+                    <th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>2</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>3</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>4</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>5</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>6</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>    
+                  <tr>
+                    <td>7</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>8</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>
+                  <tr>
+                    <td>9</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>   
+                  <tr>
+                    <td>10</td><td>Ipsum</td><td>Dolor</td><td>Dolor</td><td>Dolor</td>
+                  </tr>                                                                                                
+                </tbody>
+              </table>
+              이전 1 2 3 4 5 6 7 8 다음
+              <input type="submit" name="list" value="목록" />
+              <input type="submit" name="write" value="글쓰기" />
+    </div>
+</body>
+</html>
