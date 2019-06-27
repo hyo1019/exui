@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS BRANCH and LOOP</title>
+    <style>
+        td, th{
+            border: 1px solid black;
+        }
+        table{
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <h1>1</h1>
@@ -28,56 +37,13 @@
     </select> 월
     <Button id="btn2">계절</Button> 계절확인 : <span id="season"></span>
 
-    <script>
-        // 1.점수를 입력받아서 60-100 이면 통과, 0~59면 실패, 나머지는 유효하지 않은 점수라고 출력
-        var sco = document.querySelector('#score');
-        var bt1 = document.querySelector('#btn1');
-        var res = document.querySelector('#result');
-
-        var sc = sco.value
-        var msg1 = ' ';
-        bt1.onclick = function( ){
-            console.log(sco.value);
-            // if(60 <= Number(sco.value)) res.value="통과"; // 내가 한 거
-            // else if(60 > Number(sco.value)) console.log("실패");
-            // else console.log("유효하지 않은 점수");
-            if(60 <= sc && sc <= 100) msg1="통과"; // 내가 한 거
-            else if(0 <= sc && sc < 60) msg1="실패";
-            else msg1="유효하지 않은 점수";
-        }
-        res.innerHTML = msg1;
-        // 2.월을 입력받아서 계절을 출력 (3-5 봄, 6-8여름, 9-11가을, 나머지 겨울)
-        var mon = document.querySelector('#month');
-        var bt2 = document.querySelector('#btn2');
-        var sea = document.querySelector('#season');
-
-        var mo = mon.value
-        var msg1 = ' ';
-        bt2.onclick = function( ) { 
-            if( 3 >= Number(mon) <= 5 ) console.log("봄");
-            else if( Number(mon)<=5) console.log("봄");
-            else if( [mon="6"],[mon="7"],[mon="8"]) console.log("여름");
-            else if( 9>=Number(mon) && Number(mon)<=11) console.log("가을");
-            else console.log("겨울");
-        };
-
-        // 3.input 엘리먼트들에 시작 정수와 끝 정수를 입력하고, 합 버튼을 클릭하면, 그 범위의 정수들의 합을 출력
-        <h1>3</h1>
+    <h1>3</h1>
         <div><input type="text" id="start" />부터 <input type="text" id="end" />까지의 <button id="sumBtn">합</button>은 <span id="sum"></span></div>
 
-        // 4. - 맨 처음에는 총합 값을 0으로 출력하고, 키보드 입력으로는 변경할 수 없도록 설정
-        //    - '더하면' 버튼을 클릭할 때마다, input 에 입력되어 있는 수를 현재 총합 값에 더해서 새로운 총합 값으로 출력
-        //    - '초기화' 버튼 클릭시, 총합 값을 다시 0으로 출력
-        //    - 숫자가 아닌 값을 입력한 경우, 총합에 더하지 않고 "숫자가 아닌 것을 입력했다"는 경고 메시지를 출력(alert)하고, input 엘리먼트를 초기화
-        <h1>4</h1>
-        <div><input type="text" id="num" />를 <button id="addBtn">더하면</button> 총합은 <input type="text" id="total" /><button id="reset">초기화</button></div>
+    <h1>4</h1>
+    <div><input type="text" id="num" />를 <button id="addBtn">더하면</button> 총합은 <input type="text" id="total" /><button id="reset">초기화</button></div>
 
-        // 5.구구단을 테이블 형태로 출력
-        //  select 에서 단 수를 선택하고, 구구단 출력 버튼을 클릭하면, 선택한 단까지 구구단을 테이블로 생성하여 id가 out인 div 안에 출력
-        //  구구단 테이블 모양은 아래 이미지를 참고하여 2가지 형태로 출력
-        // https://i2.wp.com/www.happyfam.or.kr/ysoh/wp-content/uploads/sites/3/1/cfile10.uf.133865234C84222C43F18D.gif?resize=500%2C342
-        // https://4.bp.blogspot.com/-sMnQzltEQNY/WCqNbKngF2I/AAAAAAAACd8/JuOc1vTm2C8NRnFfmNR3TxqSzXXucXlEACLcB/s1600/K-004.png
-        <h1>5</h1>
+    <h1>5</h1>
         <div>
         <select id="dan">
             <option value="2">2</option>
@@ -91,6 +57,155 @@
         </select> 단까지 <button id="outBtn">구구단 출력</button>
         <div id="out"></div>
         </div>
+
+    <h1>6</h1>
+    <ul id="todos"></ul>
+    <input type="text" id="do" /> <button id="savebtn">추가</button>
+
+    <script>
+        // 1.점수를 입력받아서 60-100 이면 통과, 0~59면 실패, 나머지는 유효하지 않은 점수라고 출력
+        var sco = document.querySelector('#score');
+        var bt1 = document.querySelector('#btn1');
+        var res = document.querySelector('#result');
+        bt1.onclick = function( ){
+            var sc = Number(sco.value);
+            var msg1 = '유효하지 않은 점수';
+            // if(60 <= Number(sco.value)) res.value="통과"; // 내가 한 거
+            // else if(60 > Number(sco.value)) console.log("실패");
+            // else console.log("유효하지 않은 점수");
+            if(60 <= sc && sc <= 100) msg1="통과";
+            else if(0 <= sc && sc < 60) msg1="실패";
+            res.innerHTML = msg1;
+        }   
+        
+        // 2.월을 입력받아서 계절을 출력 (3-5 봄, 6-8여름, 9-11가을, 나머지 겨울)
+        var mon = document.querySelector('#month');
+        // var bt2 = document.querySelector('#btn2');
+        var sea = document.querySelector('#season');
+        // bt2.onclick = function( ) {
+        //버튼을 누르지 않아도 입력 엘리먼트들의 값(value)이 변경된 경우, change이벤트가 발생되는 경우!
+        mon.onchange = function( ) { 
+            var mo = Number(mon.value);
+            var msg2 = '알 수 없는 겨울';
+            // var msg2 = '겨울'; //내가 한 거
+            // if( 3 >= mo && mo <= 5 ) msg2="봄";
+            // else if( 6 >= mo && mo <= 8 ) msg2="여름";
+            // else if( 9 >= mo && mo <= 11 ) msg2="가을";
+            switch (mo) {
+                case 12: 
+                case 1:
+                case 2: msg2="겨울"; break;
+                case 3: 
+                case 4: 
+                case 5: msg2="봄"; break;
+                case 6: 
+                case 7:
+                case 8: msg2="여름"; break;
+                case 9: 
+                case 10:
+                case 11:msg2="가을"; break;
+                default: break;
+            }
+            sea.innerHTML = msg2;
+        }
+
+        // 3.input 엘리먼트들에 시작 정수와 끝 정수를 입력하고, 합 버튼을 클릭하면, 그 범위의 정수들의 합을 출력
+        var strIp = document.querySelector('#start');
+        var endIp = document.querySelector('#end');
+        var bt3 = document.querySelector('#sumBtn');
+        var hap = document.querySelector('#sum');
+
+        bt3.onclick = function( ) { 
+            var str = Number(strIp.value);
+            var end = Number(endIp.value);
+            var msg3 = 0;
+            for (let index = str; index <= end; str++) { // let과 const(상수)는 변수 선언 시 사용하는데 생존 범위가 블록 안이다.(for문 {}안) + var은 생존 범위가 함수 안
+                msg3 = msg3 + index; //동일 msg += index;
+            }
+            hap.innerHTML = msg3; // hap.innerHTML은 시작태그<span>와 종료태그</span>의 사이(HTML안)에 값을 출력
+        }
+        // 4. - 맨 처음에는 총합 값을 0으로 출력하고, 키보드 입력으로는 변경할 수 없도록 설정
+        //    - '더하면' 버튼을 클릭할 때마다, input 에 입력되어 있는 수를 현재 총합 값에 더해서 새로운 총합 값으로 출력
+        //    - '초기화' 버튼 클릭시, 총합 값을 다시 0으로 출력
+        //    - 숫자가 아닌 값을 입력한 경우, 총합에 더하지 않고 "숫자가 아닌 것을 입력했다"는 경고 메시지를 출력(alert)하고, input 엘리먼트를 초기화
+        var numIp = document.querySelector('#num');
+        var bt4 = document.querySelector('#addBtn');
+        var tot = document.querySelector('#total');
+        var bt5 = document.querySelector('#reset');
+        tot.value = 0;
+        tot.disabled = true;
+        bt4.onclick = function( ) {
+            //입력값이 없는 경우
+            if (numIp.value.length === 0) { //numIp.value === '' 
+                alert("숫자를 입력하시오.");
+                return;
+            }
+            var num = Number(numIp.value);
+            //숫자가 아닌 값을 입력한 경우 (n변수 값이 NaN인 경우)
+            //NaN은 비교연산자로 비교할 수 없고, isNaN( ) 함수로 확인 가능
+            if (isNaN(num) === true) { //숫자가 아닌 경우
+                alert("숫자가 아닌 것을 입력했다.");
+                numIp.value='';
+                return; // 아래부분을 수행하지 않고 다시 if로 돌아가는 것!
+            } 
+            var to = Number(tot.value);
+            var msg4 = '0';
+            msg4 = to + num;
+            tot.value = msg4;
+            // if (Number(numIp.value) != numIp.value ) { //내가 한 거
+            //     alert("숫자가 아닌 것을 입력했다.");
+            //     numIp.value='';
+            // }
+            // else{ 
+            // var num = Number(numIp.value);
+            // var to = Number(tot.value);
+            // var msg4 = '0';
+            // msg4 = to + num;
+            // tot.value = msg4;
+            // }
+        }
+        bt5.onclick = function( ) {
+            tot.value = 0;
+            numIp.value='';
+        }
+
+        // 5.구구단을 테이블 형태로 출력
+        //  select 에서 단 수를 선택하고, 구구단 출력 버튼을 클릭하면, 선택한 단까지 구구단을 테이블로 생성하여 id가 out인 div 안에 출력
+        //  구구단 테이블 모양은 아래 이미지를 참고하여 2가지 형태로 출력
+        // https://i2.wp.com/www.happyfam.or.kr/ysoh/wp-content/uploads/sites/3/1/cfile10.uf.133865234C84222C43F18D.gif?resize=500%2C342
+        // https://4.bp.blogspot.com/-sMnQzltEQNY/WCqNbKngF2I/AAAAAAAACd8/JuOc1vTm2C8NRnFfmNR3TxqSzXXucXlEACLcB/s1600/K-004.png
+        var danIp = document.querySelector('#dan');
+        var bt6 = document.querySelector('#outBtn');
+        var outIp = document.querySelector('#out');
+        bt6.onclick = function( ) {
+            var dan = Number(danIp.value);
+            var outp = '<table>' + '<tboby>' + '<tr>';
+            for (var a = 2; a <= dan; a++) {
+                outp += '<th>' + a + "단" + '</th>';
+                for (var b = a; b <= a; b++) {
+                    outp +="</tr><tr>";    
+                    for (var c = 1; c <= 9; c++) {
+                        outp += "<td>" + b + " X " + c + " = " + b*c + "</td>";
+                    }
+                outp +="</tr>";    
+                }
+            outp +="</th>";    
+            }
+            outp += "</tboby></table>";
+            outIp.innerHTML = outp; 
+        }
+        
+
+        //6번 input에 글을 입력하고 버튼을 누르면 <li>형태로 출력할 수 있게 한다.
+        var todosList = document.querySelector('#todos');
+        var doIp = document.querySelector('#do');
+        var savebt = document.querySelector('#savebtn');
+        savebt.onclick = function () {
+            var doI = doIp.value;
+            todosList.innerHTML = todosList.innerHTML + "<li>" + doI + "</li>";
+            // todosList.innerHTML += "<li>" + doI + "</li>";
+            doIp.value = '';
+        }
     </script>
 </body>
 </html>
