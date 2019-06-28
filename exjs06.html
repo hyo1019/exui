@@ -19,9 +19,9 @@
 <body>
     <table>
         <caption>상품목록</caption>
-        <thead><th>상품번호</th><th>상품명</th><th>가격</th></thead>
+        <thead><tr><th>상품번호</th><th>상품명</th><th>가격</th></tr></thead>
         <tbody id="prods"></tbody>
-        <tfoot><td colspan="3">상품번호:<input type="text" id="pno" /> 상품명:<input type="text" id="pname" />가격:<input type="text" id="price" /><button id="save">저장</button></td></tfoot>
+        <tfoot><tr><td colspan="3">상품번호:<input type="text" id="pno" /> 상품명:<input type="text" id="pname" />가격:<input type="text" id="price" /><button id="save">저장</button></td></tr></tfoot>
     </table>
     <script>
         // 상품객체들을 저장하는 배열 생성
@@ -33,9 +33,15 @@
 
         //1. 현재 prodList 에 저장되어 있는 상품들의 정보를 상품목록 테이블의 tbody에 출력
         var bodylist = document.querySelector('#prods');
-        for(var i =0; i <prodList.length; i++){
-            var p = prodList[i];
-            bodylist.innerHTML += '<tr>' + '<td>' + p.no  + '</td>' + '<td>' + p.name + '</td>' + '<td>' + p.price + '</td>' + '</tr>';
+        //반복적으로 실행되는 명령문을 함수로 만들어서 필요한 구간마다 재사용한다.
+        function printProdList(){
+            var html = ''; //출력할 내용을 추가하는 변수
+            for(var i =0; i <prodList.length; i++){
+                var p = prodList[i];
+                
+                html += '<tr>' + '<td>' + p.no  + '</td>' + '<td>' + p.name + '</td>' + '<td>' + p.price + '</td>' + '</tr>';
+            }
+            bodylist.innerHTML = html;
         }
 
         //2. 저장 버튼을 클릭하면, 입력한 상품 정보를 prodList 에 추가하고,
@@ -46,17 +52,19 @@
         
         saveBtn.onclick = function( ) {
             var pn = Number(pnoIn.value);
-            var pna = String(pnameIn.value);
             var pri = Number(priceIn.value);
-            prodList.push( { no: pn, name: pna, price: pri } );
-
+            prodList.push( { no: pn, name: pnameIn.value, price: pri } );
             for(var i =prodList.length-1; i <prodList.length; i++){
-            var p = prodList[i];
-            bodylist.innerHTML += '<tr>' + '<td>' + p.no  + '</td>' + '<td>' + p.name + '</td>' + '<td>' + p.price + '</td>' + '</tr>';
+                var p = prodList[i];
+                printProdList();
+                pnoIn.value = '';
+                pnameIn.value = '';
+                priceIn.value = '';
             }
         }
 
         //  prodList 에 저장되어 있는 상품들의 정보를 상품목록 테이블의 tbody에 다시 출력
+        printProdList();
         //  input 엘리먼트에 입력되어 있는 값들은 초기화
 
     </script>
